@@ -19,24 +19,30 @@ class Game:
       # first add current player to finishers if he is done
       if (self.get_current_player().score >= 100 or self.get_current_player().score <= 0):
         self.game_status.finishers.append(self.get_current_player())
-      # then update index and maybe round till player that is still in game
-      while (self.get_current_player() in self.game_status.finishers):
-        self.game_status.current_player_index += 1
-        if (self.game_status.current_player_index >= len(self.game_status.players)):
-          self.game_status.current_player_index = 0
-          self.game_status.current_round += 1
+      self.game_status.current_player_index += 1
+      if (self.game_status.current_player_index >= len(self.game_status.players)):
+        self.game_status.current_player_index = 0
+        self.game_status.current_round += 1
+      if (not len(self.game_status.finishers) == len(self.game_status.players)):
+        # then update index and maybe round till player that is still in game
+        while (self.get_current_player() in self.game_status.finishers):
+          self.game_status.current_player_index += 1
+          if (self.game_status.current_player_index >= len(self.game_status.players)):
+            self.game_status.current_player_index = 0
+            self.game_status.current_round += 1
       # then check if it's the end of the game
       if (self.game_status.current_round > self.game_status.round_amount or \
         len(self.game_status.finishers) == len(self.game_status.players)):
         self.game_status.is_game_finished = True
 
   def perform_action_by_current_player(self, n: int):
-    if (n == 1):
-      rtr_value = self.get_current_player().try_inc_score()
-    if (n == 2):
-      rtr_value = self.get_current_player().try_inc_income()
-    if (n == 3):
-      rtr_value = self.get_current_player().pass_turn()
-    self.update_game_status()
-    return rtr_value
+    if (not self.game_status.is_game_finished):
+      if (n == 1):
+        rtr_value = self.get_current_player().try_inc_score()
+      if (n == 2):
+        rtr_value = self.get_current_player().try_inc_income()
+      if (n == 3):
+        rtr_value = self.get_current_player().pass_turn()
+      self.update_game_status()
+      return rtr_value
 
