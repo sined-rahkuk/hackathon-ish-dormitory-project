@@ -17,8 +17,6 @@ class Configurator:
     finally:
       config_file.close()
 
-
-
   def get_configuration(self) -> dict:
     if self.config is not None:
       return self.config
