@@ -1,0 +1,9 @@
+In the game "Try your luck!" players compete for the championship of getting 100 points first among others.
+
+By default, the game ends after 10 rounds, or if there is only one player left - the loser. Initially, each player has the same number of points and the amount of income. As mentioned before, the goal of each player is to exceed 100 points as early as possible. As soon as the player gets the right amount, he's set to the list of winners and leaves the game, letting others finish the game.
+
+The choice of player's actions on his turn boils down to one of three options:
+
+1. With a probability of 25%, a player can increase the number of his points by amount of his present income. In case of failure, the player loses 5 points.
+2. With a probability of 65%, a player can increase the size of his income by 5 points. In case of failure, the player loses 5 points.
+3. Fearful pass! The player gets 5 points.
