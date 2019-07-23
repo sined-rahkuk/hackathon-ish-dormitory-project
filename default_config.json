@@ -11,5 +11,15 @@
   ],
   "round_amount": 10,
   "init_score": 25,
-  "init_income": 10
+  "init_income": 10,
+
+  "score_incr_chance": 25,
+  "score_increment_base": 5,
+  "score_decrement_base": 5,
+  "score_passive_increment": 5,
+
+  "income_incr_chance": 65,
+  "income_increment_base": 5,
+  "income_decrement_base": 5
+
 }

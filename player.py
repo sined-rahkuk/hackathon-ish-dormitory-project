@@ -15,13 +15,13 @@ class Player:
   def __init__(self, settings: dict):
     self.color = settings.get('color')
     self.name = settings.get('name')
-    self.score = settings.get('score_sum')
-    self.income = settings.get('income_sum')
+    self.score = settings.get('init_score')
+    self.income = settings.get('init_income')
 
     self.score_incr_chance =\
-       settings.get('score_chance', SCORE_INCREASE_CHANSE)
+       settings.get('score_incr_chance', SCORE_INCREASE_CHANSE)
     self.income_incr_chance =\
-       settings.get('income_chance', INCOME_INCREASE_CHANSE)
+       settings.get('income_incr_chance', INCOME_INCREASE_CHANSE)
 
     self.score_passive_increment =\
       settings.get('score_passive_increment', SCORE_PASSIVE_INCREMENT)
