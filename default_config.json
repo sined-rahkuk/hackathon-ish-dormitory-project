@@ -1,0 +1,15 @@
+{
+  "players": [
+    {
+      "name": "Janko Hrasko",
+      "color": "blue"
+    },
+    {
+      "name": "Jana Stastna",
+      "color": "yellow"
+    }
+  ],
+  "round_amount": 10,
+  "init_score": 25,
+  "init_income": 10
+}
