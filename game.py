@@ -32,9 +32,11 @@ class Game:
 
   def perform_action_by_current_player(self, n: int):
     if (n == 1):
-      self.get_current_player().try_inc_score()
+      rtr_value = self.get_current_player().try_inc_score()
     if (n == 2):
-      self.get_current_player().try_inc_income()
+      rtr_value = self.get_current_player().try_inc_income()
     if (n == 3):
-      self.get_current_player().pass_turn()
+      rtr_value = self.get_current_player().pass_turn()
     self.update_game_status()
+    return rtr_value
+
